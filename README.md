@@ -12,6 +12,7 @@ Using the template is quite simple:
 3. Find and replace on this file, replace *HBT.DemoLog* with the name your logging global is supposed to have, for example MyApplication.Log
 4. Find and replace on this file, replace LogDemo with the name you want your macros to have, for example LogMyApplication
 5. Save and Compile
+
 ## Usage
 Once you have compiled the Routine, assuming you named it MyApplication.Logging, you can include it like any other macro:
 `include (HBT.DemoLogging)`
@@ -27,11 +28,14 @@ Which you can call like this:
 set tResult = <some-of-your-code-that-does-something>
 $$$LogMyApplicationInfo("Result of my code is: "_tResult)
 ```
+
 ## Enabling Logging
 By default, not log output is written. You will have to enable it first, with a level you want to choose. Levels go from Off (0) to Trace (5), and a higher log level always includes all the lower ones. 
 
 To enable logging, open an IRIS session in the namespace you want to use it in, and execute this:
+
 `set ^MyApplication.Log = 5`
+
 where MyApplication.Log is the name of the global you chose. This will set the logging level to 5, which is trace (See the macro file for a list of logging levels and their numbers)
 
 To disable logging, you can either kill the global (kill ^MyApplication.Log) or set the logging level to off (set  ^MyApplication.Log = 0). The first will also remove the log history, the second will preserve it and just not log more.

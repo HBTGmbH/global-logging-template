@@ -40,6 +40,11 @@ where MyApplication.Log is the name of the global you chose. This will set the l
 
 To disable logging, you can either kill the global (kill ^MyApplication.Log) or set the logging level to off (set  ^MyApplication.Log = 0). The first will also remove the log history, the second will preserve it and just not log more.
 
+## Viewing the Logs
+There are two ways to view the output:
+* You can open an IRIS session and do `zwrite ^MyApplication.Log`, printing the entire global to the console
+* You can use the mangement portal and go to http://localhost:52773//csp/sys/exp/UtilExpGlobalView.csp?$ID2=MyApplication.Log&$NAMESPACE= (host varies on where your server is running, of course)
+
 ## Other
 Please let me know if you have any improvements for this. Feel free to comment on the gist, fork or do whatever you want with this!
 
